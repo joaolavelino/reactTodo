@@ -1,0 +1,44 @@
+.category-div{
+    width: 100%;
+}
+
+.category-form{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.category-text{
+    width: 70%;
+    padding: 5px 10px;
+    font-size: 1.2rem;
+    font-family: "Poppins", sans-serif;
+    text-transform: uppercase;
+    border: none;
+    background-color: var(--bg-elements);
+
+}
+
+.category-color{
+    width: 20%;
+    height: 39px;
+    padding: 5px 10px;
+    font-size: 1.2rem;
+    font-family: "Poppins", sans-serif;
+    text-transform: uppercase;
+    border: none;
+    background-color: var(--bg-elements);
+
+}
+
+.category-btn{
+    width: 10%;
+    padding: 5px 10px;
+    font-size: 1.2rem;
+    font-family: "Poppins", sans-serif;
+    text-transform: uppercase;
+    border: none;
+    background-color: var(--bg-elements);
+
+}

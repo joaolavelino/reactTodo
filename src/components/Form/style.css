@@ -1,0 +1,50 @@
+.form{
+    display: flex;
+    flex-wrap: wrap;
+    width: 60vw;
+    justify-content: space-between;
+    margin: 20px auto ;
+}
+
+.form-text{
+    width: 100%;
+    padding: 5px 10px;
+    font-size: 1.2rem;
+    font-family: "Poppins", sans-serif;
+    text-transform: uppercase;
+    border:none;
+    background-color: var(--bg-elements);
+}
+
+.form-date{
+    width: 45%;
+    padding: 5px 10px;
+    font-size: 1.2rem;
+    box-sizing: border-box;
+    border:none;
+    background-color: var(--bg-elements);
+}
+.form-select{
+    width: 45%;
+    padding: 5px 10px;
+    font-size: 1.2rem;
+    border:none;
+    background-color: var(--bg-elements);
+    
+}
+.form-button{
+    width: 10%;
+    padding: 5px 10px;
+    font-size: 1.2rem;
+    padding: 0;
+    border:none;
+    background-color: var(--bg-elements);
+    cursor: pointer;
+
+}
+
+
+.form-button i{
+    font-size: 2rem;
+
+}
