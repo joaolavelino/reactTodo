@@ -1,5 +1,6 @@
 .category-div{
     width: 100%;
+    border: solid 1px rgb(53, 53, 53);
 }
 
 .category-form{
@@ -41,4 +42,9 @@
     border: none;
     background-color: var(--bg-elements);
 
+}
+
+.category-btn i{
+    
+    color: #b8b8b8;
 }

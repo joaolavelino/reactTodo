@@ -1,13 +1,17 @@
 .todo-div{
     display: flex;
     background-color: var(--bg-elements);
-    width: 60vw;
-    height: 3.5rem;
+    width: 100%;
+    height: 2.5rem;
     margin: 5px auto;
     box-sizing: border-box;
     flex-basis: 100%;
     justify-content: flex-end;
     transition: 0.5;
+    font-weight: 400;
+    border: solid 1px rgb(53, 53, 53);
+    align-content: center;
+    justify-content:space-between;
 }
 
 .todo-category{
@@ -15,64 +19,85 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--destaque);
     color: white;
     text-transform: uppercase;
-    padding: 0 10px;
-    width: 6rem;
+    width: 10px;
+    font-size: 0.7rem;
+    font-weight: 400;
 }
 
 .todo-text{
     display: flex;
-    flex-direction: column;
     align-items: flex-start;
-    justify-content: space-around;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: space-between;
     box-sizing: border-box;
     padding: 0 10px;
-    width: calc(100% - 6rem - 7.5rem);
+    color: rgb(139, 139, 139);
+    text-transform: uppercase;
 
 }
 
 .todo-name{
-    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    width: calc(100% - 80px);
+    font-size: 0.9rem;
     list-style: none;
-    margin-top: 0.2rem;
+    line-height: 110%;
+    margin: 0.2rem 0;
 }
 
 .todo-date{
-    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    font-size: 0.8rem;
+    width: 80px;
+    justify-content: right;
 
 }
 
-.todo-div button{
+.todo-buttons{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    
+    padding-right: 3px;
+}
+
+.todo-buttons button{
     border:none;
+    height: 100%;
     background-color: transparent;
-    width: 2.5rem;
+    width: 2rem;
     transition: 0.5s;
     cursor: pointer;
+    text-align: center;
 }
 
 .todo-div button i{
-   font-size: 1.5rem;
-   color: white;
+   font-size: 1.1rem;
+   color: rgb(139, 139, 139);
 }
 
 .todo-check:hover{
-    background-color: rgb(39, 124, 39);
+    background-color: rgb(52, 99, 52);
 }
 .todo-important:hover{
-    background-color: rgb(255, 194, 64);
+    background-color: rgb(206, 157, 51);
 }
 .todo-delete:hover{
-    background-color: rgb(253, 69, 69);
+    background-color: tomato;
 }
 
 .prioritary{
-    background-color: rgb(255, 123, 91);
+    background-color: rgb(131, 94, 65);   
 }
+
 .completed{
     background-color: green;
-    opacity: 0.2;
+    opacity: 0.1;
 }
 
 .late{

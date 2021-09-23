@@ -9,43 +9,42 @@ import List from "./components/List/List";
 function App() {
   const [todos, setTodos] = useState([]);
   const [categories, setCategories] = useState([
+    { name: "", color: "" },
     { name: "work", color: "#700505" },
     { name: "home", color: "#150f46" },
     { name: "books", color: "#0e440D" },
     { name: "study", color: "#b75901" },
-    { name: "", color: "" },
   ]);
   const [categoryFilter, setCategoryFilter] = useState("all");
   const [status, setStatus] = useState("all");
-  const [filteredTodos, setFilteredTodos] = useState([])
+  const [filteredTodos, setFilteredTodos] = useState([]);
 
   //this will run once, when starting
   useEffect(() => {
-    getLocalTodos().then(data=>{
-      console.log(data)
-      setTodos(data)
-    })
-  },[])
+    getLocalTodos().then((data) => {
+      setTodos(data);
+    });
+  }, []);
 
   //this will run when the todos state is updated
   useEffect(() => {
-    saveLocalTodos()
-    sortByDate()
-    setTodos(todos)
-  },[todos])
+    saveLocalTodos();
+    sortByDate();
+    setTodos(todos);
+  }, [todos]);
 
-  function sortByDate(){
-    todos.sort(function(todoA,todoB){
+  function sortByDate() {
+    todos.sort(function (todoA, todoB) {
       // const dateA = moment(a.todoDateOK, "DD/MM/YYYY").format('YYYYMMDD');
       // const dateB = moment(b.todoDateOK, "DD/MM/YYYY").format('YYYYMMDD');
-      const dateA = moment(todoA.dateSort)
-      const dateB = moment(todoB.dateSort)
+      const dateA = moment(todoA.dateSort);
+      const dateB = moment(todoB.dateSort);
       if (dateA > dateB) return 1;
       if (dateA < dateB) return -1;
       // a must be equal to b
       return 0;
     });
-    return todos
+    return todos;
   }
 
   function addCategory(newCategory) {
@@ -53,25 +52,25 @@ function App() {
   }
 
   function addTodo(newTodo) {
-    if(newTodo.date===""){
-      newTodo.dateSort="0000-01-01"
-    }else{
-      newTodo.dateSort=newTodo.date
+    if (newTodo.date === "") {
+      newTodo.dateSort = "0000-01-01";
+    } else {
+      newTodo.dateSort = newTodo.date;
     }
     setTodos([...todos, newTodo]);
   }
 
-//LOCAL STORAGE
-  function saveLocalTodos () {
-      localStorage.setItem('todos', JSON.stringify(todos))
+  //LOCAL STORAGE
+  function saveLocalTodos() {
+    localStorage.setItem("todos", JSON.stringify(todos));
   }
 
   async function getLocalTodos() {
-    if(localStorage.getItem('todos') === null ){
-      localStorage.setItem('todos', JSON.stringify([]))
-    }else{
-      let array = await JSON.parse(localStorage.getItem('todos'))
-      return array
+    if (localStorage.getItem("todos") === null) {
+      localStorage.setItem("todos", JSON.stringify([]));
+    } else {
+      let array = await JSON.parse(localStorage.getItem("todos"));
+      return array;
     }
   }
 
@@ -80,6 +79,12 @@ function App() {
       <div className="interface">
         <header>
           <h1>React TodoList</h1>
+          {categories.map((cat) => (
+            <div
+              className="header-colors"
+              style={{ backgroundColor: cat.color }}
+            />
+          ))}
         </header>
         <main>
           <Form
@@ -100,6 +105,7 @@ function App() {
             todos={todos}
           />
           <List
+            className="list-component"
             todos={todos}
             setTodos={setTodos}
             categories={categories}
@@ -107,8 +113,18 @@ function App() {
           />
         </main>
         <footer>
-          <h2>Created by: João Avelino</h2>
-          <h3>Using ReactJS</h3>
+          <div className="footer-text">
+            <h2>Created by: João Avelino</h2>
+            <h3>Using ReactJS</h3>
+          </div>
+          <div className="footer-stripes">
+            {categories.map((cat) => (
+              <div
+                className="header-colors"
+                style={{ backgroundColor: cat.color }}
+              />
+            ))}
+          </div>
         </footer>
       </div>
     </div>

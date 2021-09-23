@@ -1,10 +1,10 @@
 .App {
-  background: rgb(65, 61, 134);
+  background: rgb(27, 27, 27);
   background: linear-gradient(
     229deg,
-    rgba(65, 61, 134, 1) 4%,
-    rgba(82, 82, 189, 1) 35%,
-    rgba(115, 184, 255, 1) 100%
+    rgb(26, 26, 26) 4%,
+    rgb(58, 58, 58) 35%,
+    rgb(29, 29, 29) 100%
   );
   font-family: "Poppins", sans-serif;
   margin: 0;
@@ -15,18 +15,77 @@
   justify-content: center;
 }
 
+header {
+  display: flex;
+  width: 100%;
+  height: 80px;
+  justify-content: right;
+  align-items: baseline;
+}
+
 h1 {
   color: white;
-  font-size: 3.5rem;
-  font-weight: 900;
+  font-size: 2rem;
+  font-weight: 700;
   font-family: "poppins";
   text-transform: uppercase;
-  text-align: center;
-  margin: auto;
+}
+
+.header-colors{
+  height: 100%;
+  width: 10px;
 }
 
 .interface{
-  width: 60vw;
+  display: flex;
+  width: 100vw;
+  flex-direction: column;
+  min-height: 95vh;
   /* background-color: tomato; */
 
+}
+
+main{
+  flex-grow: 1;
+}
+
+footer{
+  display: flex;
+  justify-content: flex-end;
+  background-color: #252525;
+  color: #bbbbbb;
+  height: 80px;
+}
+
+.footer-text{
+  text-align: right;
+  padding-top: 5px;
+}
+.footer-stripes{
+  display: flex;
+}
+
+footer h2{
+  font-size: 1rem;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+footer h3{
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+
+
+@media (min-width: 426px){
+  .interface{
+    width: 80vw;
+  }
+}
+@media (min-width: 769px){
+  .interface{
+    width: 40vw;
+  }
 }

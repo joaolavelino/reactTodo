@@ -7,7 +7,7 @@ import moment from "moment";
 function Todo(props) {
   useEffect(() => {
     dateCheck();
-  },[]);
+  }, []);
 
   //BUTTONS HANDLERS
   function deleteHandler() {
@@ -68,25 +68,25 @@ function Todo(props) {
         props.isCompleted ? "completed" : ""
       }         ${props.todo.isLate ? "late" : ""} `}
     >
-      <div className="todo-category" style={{ backgroundColor: props.color }}>
-        {props.category}
-      </div>
+      <div className="todo-category" style={{ backgroundColor: props.color }} />
       <div className="todo-text">
         <li className="todo-name">{props.name}</li>
         <p className="todo-date">{formatedDate}</p>
       </div>
 
-      <button className="todo-check" onClick={completeHandler}>
-        <i className="fas fa-check-square"></i>
-      </button>
+      <div className="todo-buttons">
+        <button className="todo-check" onClick={completeHandler}>
+          <i className="fas fa-check-square"></i>
+        </button>
 
-      <button className="todo-important" onClick={priorityHandler}>
-        <i className="fas fa-exclamation-triangle"></i>
-      </button>
+        <button className="todo-important" onClick={priorityHandler}>
+          <i className="fas fa-exclamation-triangle"></i>
+        </button>
 
-      <button className="todo-delete" onClick={deleteHandler}>
-        <i className="far fa-trash-alt"></i>
-      </button>
+        <button className="todo-delete" onClick={deleteHandler}>
+          <i className="far fa-trash-alt"></i>
+        </button>
+      </div>
     </div>
   );
 }

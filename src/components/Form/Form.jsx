@@ -39,6 +39,7 @@ function Form(props) {
         name="name"
         value={fields.name}
         onChange={handleChange}
+        required
       />
       <input
         className="form-date"

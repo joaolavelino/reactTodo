@@ -1,9 +1,10 @@
 .form{
     display: flex;
     flex-wrap: wrap;
-    width: 60vw;
+    width: 100%;
     justify-content: space-between;
     margin: 20px auto ;
+    border: solid 1px rgb(53, 53, 53);
 }
 
 .form-text{
@@ -14,37 +15,67 @@
     text-transform: uppercase;
     border:none;
     background-color: var(--bg-elements);
+    color: (--destaque);
+}
+
+.form-text:focus{
+    outline: none;
 }
 
 .form-date{
     width: 45%;
+    height: 1.8rem;
     padding: 5px 10px;
-    font-size: 1.2rem;
+    font-size: 0.9rem;
     box-sizing: border-box;
     border:none;
     background-color: var(--bg-elements);
+    color: #cccccc;
+    text-transform: uppercase;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
 }
+
+.form-date:focus{
+    outline: none;
+}
+
+.form-date::-webkit-calendar-picker-indicator {
+        filter: invert(0.8);
+        opacity: 0.6;
+    }
+
 .form-select{
     width: 45%;
+    height: 1.8rem;
     padding: 5px 10px;
     font-size: 1.2rem;
     border:none;
     background-color: var(--bg-elements);
-    
+    color: #b8b8b8;
 }
+
+.form-select:focus{
+    outline: none;
+}
+
 .form-button{
     width: 10%;
+    height: 1.8rem;
     padding: 5px 10px;
     font-size: 1.2rem;
     padding: 0;
     border:none;
     background-color: var(--bg-elements);
     cursor: pointer;
+    color: #b8b8b8;
 
 }
 
 
 .form-button i{
-    font-size: 2rem;
+    font-size: 1.2rem;
+    color: #b8b8b8;
+    
 
 }
